@@ -1,0 +1,18 @@
+---
+description: Quidax Figma MCP and design token conventions
+alwaysApply: true
+---
+
+# Quidax design system (Figma)
+
+Read **CLAUDE.md** in the repo root for full Figma MCP workflow and project layout.
+
+## Critical rules
+
+- Brand purple is **#6100A5** → `var(--color-brand)` in `src/styles/tokens.css`. Never hardcode hex in components.
+- Text: `var(--foreground)` (#201749), muted: `var(--foreground-contrast)` (#4C4A55).
+- Surfaces: `#F7F7F7`, `#F2F2EC`, borders `#DEDEDE` / `#E3E2E2` — use token names in tokens.css.
+- Typeface: **Uncut Sans Variable** (`src/styles/fonts.css`, `var(--font-family-sans)`). Use semantic type tokens (`--text-h1-size`, `.text-body`, etc.) — no ad-hoc px font sizes.
+- Spacing: 4px base scale (`--space-*`, `--gap-*`). Section padding: `--section-padding-y`. Use `gap` with `--gap-md` default.
+- Figma flow: `get_design_context` → `get_screenshot` → implement with CSS Modules + tokens (not raw Tailwind from MCP).
+- UI primitives go in `src/components/ui/`. Use MCP asset URLs directly; do not add icon libraries for Figma-provided assets.
