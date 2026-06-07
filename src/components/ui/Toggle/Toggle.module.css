@@ -1,0 +1,35 @@
+.track {
+  display: inline-flex;
+  align-items: center;
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: var(--radius-full);
+  padding: 0.1875rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.off {
+  background-color: var(--color-neutral-250);
+  justify-content: flex-start;
+}
+
+.on {
+  background-color: var(--color-brand);
+  justify-content: flex-end;
+}
+
+.track:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.thumb {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: var(--radius-full);
+  background-color: var(--background);
+  flex-shrink: 0;
+}

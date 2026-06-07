@@ -1,0 +1,54 @@
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-family-sans);
+  font-size: 0.8125rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.desc {
+  font-family: var(--font-family-sans);
+  font-size: 0.75rem;
+  color: var(--foreground-contrast);
+  margin: 0;
+}
+
+.info  { background-color: var(--color-info-bg); }
+.info .icon { background-color: var(--color-info-fg); }
+
+.success { background-color: var(--color-success-bg); }
+.success .icon { background-color: var(--color-success-fg); }
+
+.warning { background-color: var(--color-warning-bg); }
+.warning .icon { background-color: var(--color-warning-fg); }
+
+.error { background-color: var(--color-error-bg); }
+.error .icon { background-color: var(--color-error-fg); }

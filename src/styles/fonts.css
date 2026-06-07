@@ -1,14 +1,8 @@
-/**
- * Uncut Sans Variable — primary brand typeface.
- * Place WOFF2 in public/fonts/uncut-sans-variable.woff2 (licensed files from design team).
- */
-
 @font-face {
   font-family: "Uncut Sans Variable";
   src:
-    url("/fonts/uncut-sans-variable.woff2") format("woff2 supports variations"),
-    url("/fonts/uncut-sans-variable.woff2") format("woff2-variations"),
-    url("/fonts/uncut-sans-variable.woff2") format("woff2");
+    url("/fonts/Uncut%20Sans%20Variable.ttf") format("truetype-variations"),
+    url("/fonts/Uncut%20Sans%20Variable.ttf") format("truetype");
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;

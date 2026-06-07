@@ -1,0 +1,15 @@
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-brand);
+  color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  flex-shrink: 0;
+  user-select: none;
+}

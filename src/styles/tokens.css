@@ -92,6 +92,24 @@
   --text-label-line: 1.2;
   --text-label-tracking: 0.08em;
 
+  /* ── Border radius ─────────────────────────────────────────────── */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-full: 9999px;  /* pill */
+
+  /* ── Status colors ──────────────────────────────────────────────── */
+  --color-positive: #16a34a;
+  --color-negative: #dc2626;
+  --color-info-fg: #3b82f6;
+  --color-info-bg: #eff6ff;
+  --color-success-fg: #16a34a;
+  --color-success-bg: #f0fdf4;
+  --color-warning-fg: #d97706;
+  --color-warning-bg: #fffbeb;
+  --color-error-fg: #dc2626;
+  --color-error-bg: #fef2f2;
+
   /* ── Spacing scale (4px base) ───────────────────────────────────── */
   --space-0: 0;
   --space-1: 0.25rem; /* 4px */

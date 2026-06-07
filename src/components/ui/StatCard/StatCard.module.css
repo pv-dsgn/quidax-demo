@@ -1,0 +1,33 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: 1.25rem 1.5rem;
+  background-color: var(--background);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+}
+
+.label {
+  font-family: var(--font-family-sans);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground-contrast);
+}
+
+.value {
+  font-family: var(--font-family-sans);
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+  line-height: 1.2;
+}
+
+.trend {
+  font-family: var(--font-family-sans);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+}
+
+.positive { color: var(--color-positive); }
+.negative { color: var(--color-negative); }

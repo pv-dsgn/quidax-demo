@@ -1,0 +1,65 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  padding: 0.75rem 1rem;
+  background-color: var(--background);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-neutral-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground-contrast);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.action {
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground);
+}
+
+.date {
+  font-family: var(--font-family-sans);
+  font-size: 0.75rem;
+  color: var(--foreground-contrast);
+}
+
+.amountBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  align-items: flex-end;
+  flex-shrink: 0;
+  width: 6.25rem;
+}
+
+.amount {
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.coinAmount {
+  font-family: var(--font-family-sans);
+  font-size: 0.75rem;
+  color: var(--foreground-contrast);
+}
+
+.credit { color: var(--color-positive); }
+.debit  { color: var(--color-negative); }

@@ -1,0 +1,8 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--section-padding-y) var(--section-padding-x);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
