@@ -355,6 +355,7 @@ export default function DesignPage() {
 
   useToc([
     { id: 'overview',     label: 'Overview' },
+    { id: 'canvas',       label: 'Canvas' },
     { id: 'elements',     label: 'Elements' },
     { id: 'components',   label: 'Components' },
     { id: 'color-tokens', label: 'Color Tokens' },
@@ -389,6 +390,58 @@ export default function DesignPage() {
         <Callout icon="📁" title="Three frames">
           The .pen file contains three top-level frames: <strong>Elements</strong> (15 primitive atoms), <strong>Components</strong> (11 composed patterns), and <strong>Documentation</strong> (token specs, typography, spacing, and governance rules). This page renders all three in full.
         </Callout>
+      </Block>
+
+      <Divider />
+
+      {/* ── Canvas ───────────────────────────────────────────────────────── */}
+      <Block title="Canvas">
+        <p className="text-body-sm text-muted">
+          The three top-level frames of <code style={{ fontSize: 11, fontFamily: 'monospace', background: 'var(--color-neutral-150)', padding: '2px 5px', borderRadius: 4 }}>dsm-design.lib.pen</code> as exported from Pencil. Each frame is rendered at 1× scale — click to open full size.
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--gap-xl)' }}>
+
+          <div>
+            <SubLabel>Documentation — governance rules, color tokens, typography & spacing</SubLabel>
+            <a href="/assets/design-canvas/JHAIr.webp" target="_blank" rel="noopener noreferrer" style={{ display: 'block', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)', lineHeight: 0 }}>
+              <img
+                src="/assets/design-canvas/JHAIr.webp"
+                alt="Documentation frame — governance rules, colour tokens, typography and spacing scale"
+                width="100%"
+                style={{ display: 'block', width: '100%' }}
+                loading="lazy"
+              />
+            </a>
+          </div>
+
+          <div>
+            <SubLabel>Elements — 15 primitive UI atoms</SubLabel>
+            <a href="/assets/design-canvas/uGjdP.webp" target="_blank" rel="noopener noreferrer" style={{ display: 'block', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)', lineHeight: 0 }}>
+              <img
+                src="/assets/design-canvas/uGjdP.webp"
+                alt="Elements frame — buttons, input, badges, controls, tabs and divider"
+                width="100%"
+                style={{ display: 'block', width: '100%' }}
+                loading="lazy"
+              />
+            </a>
+          </div>
+
+          <div>
+            <SubLabel>Components — 11 composed components</SubLabel>
+            <a href="/assets/design-canvas/e4Zvl.webp" target="_blank" rel="noopener noreferrer" style={{ display: 'block', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)', lineHeight: 0 }}>
+              <img
+                src="/assets/design-canvas/e4Zvl.webp"
+                alt="Components frame — card, alerts, data display, navigation and market table row"
+                width="100%"
+                style={{ display: 'block', width: '100%' }}
+                loading="lazy"
+              />
+            </a>
+          </div>
+
+        </div>
       </Block>
 
       <Divider />
