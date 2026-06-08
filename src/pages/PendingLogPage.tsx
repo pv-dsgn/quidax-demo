@@ -40,20 +40,6 @@ interface PlannedItem {
 
 const PLANNED: PlannedItem[] = [
   {
-    id: 'button',
-    title: 'Button',
-    category: 'Component',
-    priority: 'high',
-    description: 'Primary, secondary, ghost, and destructive variants with loading state and icon slot.',
-  },
-  {
-    id: 'input',
-    title: 'Input / TextField',
-    category: 'Component',
-    priority: 'high',
-    description: 'Text input with label, helper text, error state, and prefix/suffix slot.',
-  },
-  {
     id: 'modal',
     title: 'Modal / Dialog',
     category: 'Component',
@@ -66,13 +52,6 @@ const PLANNED: PlannedItem[] = [
     category: 'Component',
     priority: 'medium',
     description: 'Small inline status pill for notification counts and categorical labels.',
-  },
-  {
-    id: 'select',
-    title: 'Select / Dropdown',
-    category: 'Component',
-    priority: 'medium',
-    description: 'Native-backed select with custom styling, grouped options, and searchable variant.',
   },
   {
     id: 'dark-mode',

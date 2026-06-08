@@ -28,6 +28,60 @@ const TAG_CONFIG: Record<ChangeType, { label: string; color: string; bg: string 
 
 const CHANGELOG: ChangelogEntry[] = [
   {
+    id: 'navbar-button-adoption',
+    date: '2026-06-08',
+    sha: 'e022316',
+    title: 'Adopt Button component in NavBar CTA',
+    description: 'Removes the one-off .cta style block from NavBar and replaces it with the new shared Button component, keeping the visual output identical while cutting 21 lines of duplicated CSS.',
+    changes: [
+      {
+        type: 'changed',
+        items: [
+          'NavBar: <button className={styles.cta}> replaced with <Button variant="primary" size="sm"> — hover, focus, and disabled states now come from the Button token layer',
+          'NavBar.module.css: .cta and .cta:hover rules removed (21 lines deleted)',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'select-component',
+    date: '2026-06-08',
+    sha: 'd28ab85',
+    title: 'Select / Dropdown component',
+    description: 'Native-backed select wrapped in the design token layer — consistent focus ring, custom chevron, and the same label/helper/error API as Input.',
+    changes: [
+      {
+        type: 'added',
+        items: [
+          'Select component (src/components/ui/Select/) — native <select> with appearance:none, custom chevron icon, and styled wrapper matching Input\'s focus/error states',
+          'Grouped options support via <optgroup> — pass SelectGroup[] for grouped lists, SelectOption[] for flat lists',
+          'Full aria wiring: aria-invalid on error, aria-describedby linking to helper/error text, auto-generated id via useId',
+          'Docs page at /components/select — flat, grouped, error, and disabled demos; props table; guidelines; accessibility callout',
+          'Select exported from src/components/ui/index.ts alongside SelectOption and SelectGroup types',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'button-input-components',
+    date: '2026-06-08',
+    sha: '301971b',
+    title: 'Button and Input components',
+    description: 'The two highest-priority components land together: a full-featured action trigger and a text field that share the same label/helper/error API pattern.',
+    changes: [
+      {
+        type: 'added',
+        items: [
+          'Button component (src/components/ui/Button/) — primary, secondary, ghost, and destructive variants; sm/md/lg sizes; loading state with animated spinner; optional leadingIcon and trailingIcon slots',
+          'Input component (src/components/ui/Input/) — label, helperText, errorMessage, prefix/suffix slots, required indicator; aria-invalid + aria-describedby wired; id auto-generated via useId',
+          'Docs pages at /components/button and /components/input — Demo, Code, Props, Guidelines, and Accessibility sections',
+          'Button and Input added to sidebar nav and routes in DocsLayout and App.tsx',
+          'Both components exported from src/components/ui/index.ts',
+        ],
+      },
+    ],
+  },
+  {
     id: 'color-token-alignment',
     date: '2026-06-08',
     sha: 'd13b2c2',
