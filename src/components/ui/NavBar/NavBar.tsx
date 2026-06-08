@@ -1,4 +1,5 @@
 import { Avatar } from '@/components/ui/Avatar'
+import { Button } from '@/components/ui/Button'
 import styles from './NavBar.module.css'
 
 interface NavLink {
@@ -48,9 +49,9 @@ export function NavBar({
       <div className={styles.right}>
         {userInitials && <Avatar initials={userInitials} />}
         {onSignUp && (
-          <button type="button" className={styles.cta} onClick={onSignUp}>
+          <Button variant="primary" size="sm" onClick={onSignUp}>
             Sign Up
-          </button>
+          </Button>
         )}
       </div>
     </header>

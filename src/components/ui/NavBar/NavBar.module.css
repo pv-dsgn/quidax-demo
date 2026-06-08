@@ -46,22 +46,3 @@
   align-items: center;
   gap: 1rem;
 }
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.625rem 1.25rem;
-  background-color: var(--color-brand);
-  color: var(--background);
-  border: none;
-  border-radius: var(--radius-md);
-  font-family: var(--font-family-sans);
-  font-size: 0.875rem;
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  transition: opacity 0.1s ease;
-}
-
-.cta:hover {
-  opacity: 0.9;
-}
