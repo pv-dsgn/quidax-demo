@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.env
+.env.*
+!.env.example
+
+# Claude Code
+.claude/
+
+# Font files (licensed — distribute separately)
+*.ttf
+*.otf
+*.woff
+*.woff2
+
+# Vite
+.vite/
