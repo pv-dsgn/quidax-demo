@@ -397,50 +397,40 @@ export default function DesignPage() {
       {/* ── Canvas ───────────────────────────────────────────────────────── */}
       <Block title="Canvas">
         <p className="text-body-sm text-muted">
-          The three top-level frames of <code style={{ fontSize: 11, fontFamily: 'monospace', background: 'var(--color-neutral-150)', padding: '2px 5px', borderRadius: 4 }}>dsm-design.lib.pen</code> as exported from Pencil. Each frame is rendered at 1× scale — click to open full size.
+          The design canvas in <code style={{ fontSize: 11, fontFamily: 'monospace', background: 'var(--color-neutral-150)', padding: '2px 5px', borderRadius: 4 }}>dsm-design.lib.pen</code> — three frames side by side as they sit in Pencil. Scroll horizontally to pan. Click to open full size.
         </p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--gap-xl)' }}>
-
-          <div>
-            <SubLabel>Documentation — governance rules, color tokens, typography & spacing</SubLabel>
-            <a href="/assets/design-canvas/JHAIr.webp" target="_blank" rel="noopener noreferrer" style={{ display: 'block', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)', lineHeight: 0 }}>
+        <div style={{
+          display: 'flex',
+          gap: 12,
+          overflowX: 'auto',
+          padding: 'var(--space-5)',
+          background: 'var(--color-neutral-100)',
+          borderRadius: 'var(--radius-lg)',
+          border: '1px solid var(--color-border)',
+          scrollbarWidth: 'thin',
+          scrollbarColor: 'var(--color-neutral-250) transparent',
+        }}>
+          {[
+            { src: '/assets/design-canvas/JHAIr.webp', alt: 'Documentation frame — governance rules, colour tokens, typography and spacing' },
+            { src: '/assets/design-canvas/uGjdP.webp', alt: 'Elements frame — buttons, input, badges, controls, tabs and divider' },
+            { src: '/assets/design-canvas/e4Zvl.webp', alt: 'Components frame — card, alerts, data display, navigation and market table row' },
+          ].map(({ src, alt }) => (
+            <a
+              key={src}
+              href={src}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'block', flexShrink: 0, lineHeight: 0, borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)' }}
+            >
               <img
-                src="/assets/design-canvas/JHAIr.webp"
-                alt="Documentation frame — governance rules, colour tokens, typography and spacing scale"
-                width="100%"
-                style={{ display: 'block', width: '100%' }}
+                src={src}
+                alt={alt}
+                style={{ display: 'block', height: 380, width: 'auto' }}
                 loading="lazy"
               />
             </a>
-          </div>
-
-          <div>
-            <SubLabel>Elements — 15 primitive UI atoms</SubLabel>
-            <a href="/assets/design-canvas/uGjdP.webp" target="_blank" rel="noopener noreferrer" style={{ display: 'block', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)', lineHeight: 0 }}>
-              <img
-                src="/assets/design-canvas/uGjdP.webp"
-                alt="Elements frame — buttons, input, badges, controls, tabs and divider"
-                width="100%"
-                style={{ display: 'block', width: '100%' }}
-                loading="lazy"
-              />
-            </a>
-          </div>
-
-          <div>
-            <SubLabel>Components — 11 composed components</SubLabel>
-            <a href="/assets/design-canvas/e4Zvl.webp" target="_blank" rel="noopener noreferrer" style={{ display: 'block', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)', lineHeight: 0 }}>
-              <img
-                src="/assets/design-canvas/e4Zvl.webp"
-                alt="Components frame — card, alerts, data display, navigation and market table row"
-                width="100%"
-                style={{ display: 'block', width: '100%' }}
-                loading="lazy"
-              />
-            </a>
-          </div>
-
+          ))}
         </div>
       </Block>
 
