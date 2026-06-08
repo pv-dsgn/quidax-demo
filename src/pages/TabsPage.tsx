@@ -3,6 +3,7 @@ import { TabBar } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const MARKET_TABS = ['All', 'Favourites', 'Gainers', 'Losers', 'New']
 const ACCOUNT_TABS = ['Overview', 'Markets', 'Portfolio', 'History']
@@ -53,6 +54,14 @@ active?: boolean
 onClick?: () => void`
 
 export default function TabsPage() {
+  useToc([
+    { id: 'market-tabs',  label: 'Market tabs' },
+    { id: 'account-tabs', label: 'Account tabs' },
+    { id: 'code',         label: 'Code' },
+    { id: 'props',        label: 'Props' },
+    { id: 'guidelines',   label: 'Guidelines' },
+  ])
+
   const [marketTab, setMarketTab] = useState('All')
   const [accountTab, setAccountTab] = useState('Overview')
 

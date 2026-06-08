@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Chip, Divider } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { pageStyles, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const STACK_CHIPS = ['React 18', 'TypeScript', 'CSS Modules', 'CSS Custom Props', 'Uncut Sans Variable']
 
@@ -40,6 +41,14 @@ import '@/styles/typography.css'
 import '@/styles/global.css'`
 
 export default function IntroductionPage() {
+  useToc([
+    { id: 'overview', label: 'Overview' },
+    { id: 'whats-inside', label: "What's inside" },
+    { id: 'how-tokens-work', label: 'How tokens work' },
+    { id: 'quick-start', label: 'Quick start' },
+    { id: 'design-principles', label: 'Design principles' },
+  ])
+
   const [activeChip, setActiveChip] = useState<string | null>(null)
   const navigate = useNavigate()
 
@@ -53,7 +62,7 @@ export default function IntroductionPage() {
   return (
     <div className={pageStyles.page}>
       {/* Hero */}
-      <section style={{ paddingTop: 'var(--space-10)', display: 'flex', flexDirection: 'column', gap: 'var(--space-6)', borderBottom: '1px solid var(--color-border)', paddingBottom: 'var(--space-10)' }}>
+      <section id="overview" style={{ paddingTop: 'var(--space-10)', scrollMarginTop: '5rem', display: 'flex', flexDirection: 'column', gap: 'var(--space-6)', borderBottom: '1px solid var(--color-border)', paddingBottom: 'var(--space-10)' }}>
         <span className={`text-label ${pageStyles.eyebrow}`}>v1.0 · 2026</span>
         <h1 className="text-display-xl" style={{ color: 'var(--foreground)', lineHeight: 1.05 }}>
           Quidax-demo<br />
@@ -172,7 +181,7 @@ export default function IntroductionPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--gap-md)' }}>
           {[
             { icon: '🎨', title: 'Tokens first', body: 'No raw hex values or magic numbers in components. Every visual property traces back to a named token.' },
-            { icon: '⚡', title: 'One variable font', body: 'Uncut Sans Variable covers the full weight range (300–700) in a single file. No FOUT, no font juggling.' },
+            { icon: '⚡', title: 'One variable font', body: 'Uncut Sans Variable covers the full weight range (300–700) in a single file. This prevents font juggling.' },
             { icon: '📐', title: '4px base grid', body: 'All spacing is a multiple of 4px. The predictable rhythm eliminates arbitrary sizing decisions.' },
             { icon: '♿', title: 'Accessible by default', body: 'Interactive components follow WAI-ARIA patterns. Focus rings, roles, and aria-labels are built in.' },
           ].map(({ icon, title, body }) => (

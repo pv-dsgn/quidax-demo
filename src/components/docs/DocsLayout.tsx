@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { NavLink, Outlet, useLocation, useNavigate, Link } from 'react-router-dom'
 import { NavBar } from '@/components/ui'
+import { TocProvider, useTocContext, type TocItem } from './TocContext'
 import styles from './DocsLayout.module.css'
 
 const NAV = [
@@ -20,8 +21,100 @@ const NAV = [
   { path: '/components/transactionrow', label: 'TransactionRow', group: 'Components' },
 ]
 
-export default function DocsLayout() {
+function MobileNavSelect() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  return (
+    <select
+      className={styles.mobileNavSelect}
+      value={location.pathname}
+      onChange={e => navigate(e.target.value)}
+      aria-label="Navigate to page"
+    >
+      {NAV.map(item => (
+        <option key={item.path} value={item.path}>
+          {item.group ? `${item.group} / ` : ''}{item.label}
+        </option>
+      ))}
+    </select>
+  )
+}
+
+function PageNav() {
+  const location = useLocation()
+  const currentIndex = NAV.findIndex(n => n.path === location.pathname)
+  const prev = currentIndex > 0 ? NAV[currentIndex - 1] : null
+  const next = currentIndex < NAV.length - 1 ? NAV[currentIndex + 1] : null
+
+  if (!prev && !next) return null
+
+  return (
+    <div className={styles.pageNav}>
+      {prev ? (
+        <Link to={prev.path} className={`${styles.pageNavLink} ${styles.pageNavPrev}`}>
+          <span className={styles.pageNavDirection}>← Previous</span>
+          <span className={styles.pageNavTitle}>{prev.label}</span>
+        </Link>
+      ) : <span />}
+      {next ? (
+        <Link to={next.path} className={`${styles.pageNavLink} ${styles.pageNavNext}`}>
+          <span className={styles.pageNavDirection}>Next →</span>
+          <span className={styles.pageNavTitle}>{next.label}</span>
+        </Link>
+      ) : <span />}
+    </div>
+  )
+}
+
+function TableOfContents({ items }: { items: TocItem[] }) {
+  const [activeId, setActiveId] = useState('')
+
+  useEffect(() => {
+    if (items.length === 0) return
+    const observer = new IntersectionObserver(
+      entries => {
+        const hit = entries.find(e => e.isIntersecting)
+        if (hit) setActiveId(hit.target.id)
+      },
+      { rootMargin: '-15% 0px -70% 0px', threshold: 0 },
+    )
+    items.forEach(({ id }) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [items])
+
+  // reset active when page changes
+  useEffect(() => { setActiveId('') }, [items])
+
+  if (items.length === 0) return null
+
+  function scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  return (
+    <nav className={styles.toc} aria-label="On this page">
+      <span className={styles.tocHeading}>On this page</span>
+      {items.map(item => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          className={[styles.tocLink, activeId === item.id ? styles.tocLinkActive : ''].join(' ')}
+          onClick={e => { e.preventDefault(); scrollTo(item.id) }}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  )
+}
+
+function DocsLayoutInner() {
   const [search, setSearch] = useState('')
+  const { items } = useTocContext()
 
   const query = search.toLowerCase().trim()
   const filtered = query
@@ -39,16 +132,15 @@ export default function DocsLayout() {
   return (
     <div className={styles.root}>
       <div className={styles.navWrap}>
-        <NavBar
-          links={[
-            { label: 'Design System', active: true },
-          ]}
-        />
+        <NavBar links={[{ label: '', active: true }]} />
       </div>
 
       <div className={styles.layout}>
+        {/* Left sidebar */}
         <aside className={styles.sidebar}>
           <div className={styles.sidebarInner}>
+            <MobileNavSelect />
+
             <label className={styles.searchLabel} aria-label="Search">
               <svg className={styles.searchIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
@@ -87,10 +179,23 @@ export default function DocsLayout() {
           </div>
         </aside>
 
+        {/* Page content */}
         <main className={styles.main}>
           <Outlet />
+          <PageNav />
         </main>
+
+        {/* Right ToC */}
+        <TableOfContents items={items} />
       </div>
     </div>
+  )
+}
+
+export default function DocsLayout() {
+  return (
+    <TocProvider>
+      <DocsLayoutInner />
+    </TocProvider>
   )
 }

@@ -23,7 +23,7 @@ const DEFAULT_LINKS: NavLink[] = [
 ]
 
 export function NavBar({
-  logo = 'quidax',
+  logo = 'Quidax-demo Design System',
   links = DEFAULT_LINKS,
   userInitials,
   onSignUp,

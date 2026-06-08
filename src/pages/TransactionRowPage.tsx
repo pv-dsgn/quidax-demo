@@ -2,6 +2,7 @@ import { TransactionRow } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const TRANSACTIONS = [
   { action: 'Bought Bitcoin', date: 'Jun 5, 2026 · 14:32', amount: '+$2,450.00', coinAmount: '0.036 BTC', credit: true },
@@ -41,6 +42,13 @@ const CODE = `import { TransactionRow } from '@/components/ui'
 />`
 
 export default function TransactionRowPage() {
+  useToc([
+    { id: 'demo',       label: 'Demo' },
+    { id: 'code',       label: 'Code' },
+    { id: 'props',      label: 'Props' },
+    { id: 'guidelines', label: 'Guidelines' },
+  ])
+
   return (
     <div className={pageStyles.page}>
       <PageHeader

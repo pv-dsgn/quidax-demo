@@ -2,6 +2,7 @@ import { Divider, StatCard } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const CODE = `import { Divider } from '@/components/ui'
 
@@ -26,6 +27,13 @@ const CODE = `import { Divider } from '@/components/ui'
 </div>`
 
 export default function DividerPage() {
+  useToc([
+    { id: 'demo',       label: 'Demo' },
+    { id: 'code',       label: 'Code' },
+    { id: 'props',      label: 'Props' },
+    { id: 'guidelines', label: 'Guidelines' },
+  ])
+
   return (
     <div className={pageStyles.page}>
       <PageHeader

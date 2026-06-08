@@ -2,6 +2,7 @@ import { CoinRow } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const COINS = [
   { symbol: 'B', name: 'Bitcoin', ticker: 'BTC', price: '$67,240.00', change: '2.4%', changePositive: true, iconColor: '#F7931A' },
@@ -38,6 +39,13 @@ const CODE = `import { CoinRow } from '@/components/ui'
 <CoinRow symbol="U" name="USDT" ticker="USDT" price="$1.00" change="0.01%" />`
 
 export default function CoinRowPage() {
+  useToc([
+    { id: 'demo',       label: 'Demo' },
+    { id: 'code',       label: 'Code' },
+    { id: 'props',      label: 'Props' },
+    { id: 'guidelines', label: 'Guidelines' },
+  ])
+
   return (
     <div className={pageStyles.page}>
       <PageHeader

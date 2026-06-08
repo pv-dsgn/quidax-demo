@@ -1,6 +1,7 @@
 import { Divider } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const SPACE_SCALE = [
   { token: '--space-0', rem: '0', px: 0, use: 'Reset' },
@@ -68,6 +69,13 @@ const USAGE_SNIPPET = `/* Stack layout — gap between children */
 }`
 
 export default function SpacingPage() {
+  useToc([
+    { id: 'space-scale',    label: 'Space scale' },
+    { id: 'gap-tokens-flex-grid', label: 'Gap tokens' },
+    { id: 'layout-tokens',  label: 'Layout tokens' },
+    { id: 'usage',          label: 'Usage' },
+  ])
+
   return (
     <div className={pageStyles.page}>
       <PageHeader

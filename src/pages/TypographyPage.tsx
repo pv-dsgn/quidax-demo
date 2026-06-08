@@ -1,6 +1,7 @@
 import { Divider } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const TYPE_SCALE = [
   { cls: 'text-display-xl', label: 'Display XL', spec: '40–64px · wght 600 · tracking −0.03em', sample: "Africa's crypto future." },
@@ -55,6 +56,13 @@ const GUIDELINES = [
 ]
 
 export default function TypographyPage() {
+  useToc([
+    { id: 'type-scale',  label: 'Type scale' },
+    { id: 'font-face',   label: 'Typeface' },
+    { id: 'usage',       label: 'Usage' },
+    { id: 'style-guide', label: 'Style guide' },
+  ])
+
   return (
     <div className={pageStyles.page}>
       <PageHeader
@@ -93,7 +101,7 @@ export default function TypographyPage() {
 
       <Divider />
 
-      <Block title="Font face">
+      <Block title="Typeface">
         <p className="text-body text-muted">
           The font file lives at <code style={{ fontSize: 11, fontFamily: 'monospace', background: 'var(--color-neutral-150)', padding: '2px 6px', borderRadius: 4 }}>public/fonts/Uncut Sans Variable.ttf</code> and is loaded once in <code style={{ fontSize: 11, fontFamily: 'monospace', background: 'var(--color-neutral-150)', padding: '2px 6px', borderRadius: 4 }}>src/styles/fonts.css</code>.
         </p>

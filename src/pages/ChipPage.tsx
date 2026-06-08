@@ -3,6 +3,7 @@ import { Chip } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const FILTER_CHIPS = ['All', 'BTC', 'ETH', 'SOL', 'USDT', 'Stablecoins', 'DeFi', 'Layer 2']
 const CATEGORY_CHIPS = ['Spot', 'Futures', 'Options', 'P2P']
@@ -32,6 +33,14 @@ function AssetFilter() {
 <Chip label="Stablecoins" />`
 
 export default function ChipPage() {
+  useToc([
+    { id: 'filter-chips',   label: 'Filter chips' },
+    { id: 'category-chips', label: 'Category chips' },
+    { id: 'code',           label: 'Code' },
+    { id: 'props',          label: 'Props' },
+    { id: 'guidelines',     label: 'Guidelines' },
+  ])
+
   const [activeFilter, setActiveFilter] = useState('All')
   const [activeCategory, setActiveCategory] = useState('Spot')
 

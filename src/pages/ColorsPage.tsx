@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Divider } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const COLOR_GROUPS = [
   {
@@ -115,6 +116,14 @@ function Swatch({ token, hex, name, usage }: { token: string; hex: string; name:
 }
 
 export default function ColorsPage() {
+  useToc([
+    { id: 'brand',    label: 'Brand' },
+    { id: 'semantic', label: 'Semantic' },
+    { id: 'neutrals', label: 'Neutrals' },
+    { id: 'status',   label: 'Status' },
+    { id: 'usage',    label: 'Usage' },
+  ])
+
   return (
     <div className={pageStyles.page}>
       <PageHeader

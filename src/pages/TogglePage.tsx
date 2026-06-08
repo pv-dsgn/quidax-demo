@@ -3,6 +3,7 @@ import { Toggle } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const SETTINGS = [
   { key: 'notifications' as const, label: 'Price alerts', desc: 'Notify when an asset moves more than 5% in 24 hours.' },
@@ -38,6 +39,13 @@ function NotificationSetting() {
 <Toggle checked={false} onChange={() => {}} disabled label="Feature locked" />`
 
 export default function TogglePage() {
+  useToc([
+    { id: 'demo',       label: 'Demo' },
+    { id: 'code',       label: 'Code' },
+    { id: 'props',      label: 'Props' },
+    { id: 'guidelines', label: 'Guidelines' },
+  ])
+
   const [state, setState] = useState({
     notifications: true,
     twoFactor: false,

@@ -1,4 +1,5 @@
 import styles from './Section.module.css'
+import { toId } from './TocContext'
 
 export { styles as pageStyles }
 
@@ -25,7 +26,7 @@ interface BlockProps {
 
 export function Block({ title, children }: BlockProps) {
   return (
-    <div className={styles.block}>
+    <div id={toId(title)} className={styles.block} style={{ scrollMarginTop: '5rem' }}>
       <h2 className={`text-h3 ${styles.blockTitle}`}>{title}</h2>
       {children}
     </div>

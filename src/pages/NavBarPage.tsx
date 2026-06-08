@@ -3,6 +3,7 @@ import { NavBar, Chip } from '@/components/ui'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Section'
+import { useToc } from '@/components/docs/TocContext'
 
 const CODE = `import { NavBar } from '@/components/ui'
 
@@ -36,6 +37,13 @@ const LINK_TYPE = `interface NavLink {
 }`
 
 export default function NavBarPage() {
+  useToc([
+    { id: 'demo',       label: 'Demo' },
+    { id: 'code',       label: 'Code' },
+    { id: 'props',      label: 'Props' },
+    { id: 'guidelines', label: 'Guidelines' },
+  ])
+
   const VARIANTS = ['Loogged-in', 'Logged-out']
   const [activeVariant, setActiveVariant] = useState('Loogged-in')
 
