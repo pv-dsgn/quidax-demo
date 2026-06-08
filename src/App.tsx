@@ -4,6 +4,7 @@ import DocsLayout from './components/docs/DocsLayout'
 import IntroductionPage from './pages/IntroductionPage'
 import ChangelogPage from './pages/ChangelogPage'
 import PendingLogPage from './pages/PendingLogPage'
+import DesignPage from './pages/DesignPage'
 import ColorsPage from './pages/ColorsPage'
 import TypographyPage from './pages/TypographyPage'
 import SpacingPage from './pages/SpacingPage'
@@ -26,7 +27,8 @@ export default function App() {
         <Route index element={<Navigate to="/introduction" replace />} />
         <Route path="introduction" element={<IntroductionPage />} />
         <Route path="changelog" element={<ChangelogPage />} />
-        <Route path="pendinglog" element={<PendingLogPage />} />
+        <Route path="Pendinglog" element={<PendingLogPage />} />
+        <Route path="design" element={<DesignPage />} />
         <Route path="foundations/colors" element={<ColorsPage />} />
         <Route path="foundations/typography" element={<TypographyPage />} />
         <Route path="foundations/spacing" element={<SpacingPage />} />

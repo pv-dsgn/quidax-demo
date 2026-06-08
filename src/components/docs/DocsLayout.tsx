@@ -7,7 +7,8 @@ import styles from './DocsLayout.module.css'
 const NAV = [
   { path: '/introduction', label: 'Introduction', group: '' },
   { path: '/changelog', label: 'Changelog', group: '' },
-  { path: '/pendinglog', label: 'PendingLog', group: '' },
+  { path: '/Pendinglog', label: 'PendingLog', group: '' },
+  { path: '/design', label: 'Design', group: '' },
   { path: '/foundations/colors', label: 'Colors', group: 'Foundations' },
   { path: '/foundations/typography', label: 'Typography', group: 'Foundations' },
   { path: '/foundations/spacing', label: 'Spacing', group: 'Foundations' },

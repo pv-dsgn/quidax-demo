@@ -410,7 +410,7 @@ export default function PendingLogPage() {
     <div className={pageStyles.page}>
       <PageHeader
         eyebrow="Project"
-        title="PendingLog"
+        title="Pendinglog"
         lead="Live open pull requests from GitHub alongside planned work items. PRs update on each page load. Planned items are maintained manually in this file."
       />
 

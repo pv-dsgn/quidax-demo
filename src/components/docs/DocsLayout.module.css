@@ -149,7 +149,9 @@
 .main {
   padding: var(--space-12) var(--space-12) var(--space-24);
   min-width: 0;
-  max-width: 860px;
+  max-width: 920px;
+  margin-inline: auto;
+  width: 100%;
 }
 
 /* ── Right ToC ───────────────────────────────────────── */
