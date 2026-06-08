@@ -42,9 +42,6 @@ export default function DocsLayout() {
         <NavBar
           links={[
             { label: 'Design System', active: true },
-            { label: 'Components' },
-            { label: 'Tokens' },
-            { label: '.Pen' },
           ]}
         />
       </div>

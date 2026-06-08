@@ -6,7 +6,7 @@ import { pageStyles, PageHeader, Block, Callout } from '@/components/docs/Sectio
 
 const CODE = `import { NavBar } from '@/components/ui'
 
-// Full NavBar with user avatar
+// Loogged-in NavBar with user avatar
 <NavBar
   logo="quidax"
   links={[
@@ -36,11 +36,11 @@ const LINK_TYPE = `interface NavLink {
 }`
 
 export default function NavBarPage() {
-  const VARIANTS = ['Full (with avatar)', 'Logged-out', 'Minimal']
-  const [activeVariant, setActiveVariant] = useState('Full (with avatar)')
+  const VARIANTS = ['Loogged-in', 'Logged-out']
+  const [activeVariant, setActiveVariant] = useState('Loogged-in')
 
   const linkSets: Record<string, { label: string; active?: boolean }[]> = {
-    'Full (with avatar)': [
+    'Loogged-in': [
       { label: 'Markets', active: true },
       { label: 'Trade' },
       { label: 'Wallets' },
@@ -51,9 +51,7 @@ export default function NavBarPage() {
       { label: 'Pricing' },
       { label: 'About' },
     ],
-    'Minimal': [
-      { label: 'Design System', active: true },
-    ],
+    
   }
 
   return (
@@ -73,7 +71,8 @@ export default function NavBarPage() {
         <div className={pageStyles.demoClean} style={{ border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
           <NavBar
             links={linkSets[activeVariant]}
-            userInitials={activeVariant === 'Full (with avatar)' ? 'QX' : undefined}
+            userInitials={activeVariant === 'Loogged-in' ? 'QX' : undefined}
+            onSignUp={activeVariant === 'Logged-out' ? () => {} : undefined}
           />
         </div>
       </Block>

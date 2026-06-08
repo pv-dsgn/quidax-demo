@@ -45,7 +45,7 @@ export default function StatCardPage() {
       />
 
       <Block title="Demo">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--gap-md)', padding: 'var(--card-padding)', background: 'var(--color-neutral-100)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--gap-md)', background: 'var(--background)', borderRadius: 'var(--radius-lg)',}}>
           <StatCard label="Portfolio Value" value="$24,840.00" trend="12.4% this month" trendPositive />
           <StatCard label="Total P&L" value="+$2,720.00" trend="4 trades today" trendPositive />
           <StatCard label="BTC Holdings" value="0.368 BTC" trend="2.1% dropped" trendPositive={false} />

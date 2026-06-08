@@ -44,7 +44,7 @@ export default function IntroductionPage() {
   const navigate = useNavigate()
 
   const SECTIONS = [
-    { label: 'Colors', path: '/foundations/colors', count: '18', unit: 'tokens', desc: 'Brand, semantic, neutral, and status colors as CSS custom properties.' },
+    { label: 'Colors', path: '/foundations/colors', count: '14', unit: 'tokens', desc: 'Brand, semantic, neutral, and status colors as CSS custom properties.' },
     { label: 'Typography', path: '/foundations/typography', count: '11', unit: 'styles', desc: 'Uncut Sans Variable across an 11-step scale from Display XL to Label.' },
     { label: 'Spacing', path: '/foundations/spacing', count: '4px', unit: 'base', desc: '10-step scale built on a 4px grid with gap and layout helper tokens.' },
     { label: 'Components', path: '/components/alert', count: '10', unit: 'components', desc: 'Production-ready, accessible UI components wired to design tokens.' },
@@ -56,7 +56,7 @@ export default function IntroductionPage() {
       <section style={{ paddingTop: 'var(--space-10)', display: 'flex', flexDirection: 'column', gap: 'var(--space-6)', borderBottom: '1px solid var(--color-border)', paddingBottom: 'var(--space-10)' }}>
         <span className={`text-label ${pageStyles.eyebrow}`}>v1.0 · 2026</span>
         <h1 className="text-display-xl" style={{ color: 'var(--foreground)', lineHeight: 1.05 }}>
-          Quidax<br />
+          Quidax-demo<br />
           <span style={{ color: 'var(--color-brand)' }}>Design System</span>
         </h1>
         <p className="text-body-lg text-muted" style={{ maxWidth: '56ch' }}>

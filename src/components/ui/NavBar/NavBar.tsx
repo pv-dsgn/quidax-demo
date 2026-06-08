@@ -47,9 +47,11 @@ export function NavBar({
       </div>
       <div className={styles.right}>
         {userInitials && <Avatar initials={userInitials} />}
-        <button type="button" className={styles.cta} onClick={onSignUp}>
-          Sign Up
-        </button>
+        {onSignUp && (
+          <button type="button" className={styles.cta} onClick={onSignUp}>
+            Sign Up
+          </button>
+        )}
       </div>
     </header>
   )
