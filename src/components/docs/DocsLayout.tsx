@@ -12,6 +12,8 @@ const NAV = [
   { path: '/foundations/colors', label: 'Colors', group: 'Foundations' },
   { path: '/foundations/typography', label: 'Typography', group: 'Foundations' },
   { path: '/foundations/spacing', label: 'Spacing', group: 'Foundations' },
+  { path: '/components/button', label: 'Button', group: 'Components' },
+  { path: '/components/input', label: 'Input', group: 'Components' },
   { path: '/components/alert', label: 'Alert', group: 'Components' },
   { path: '/components/avatar', label: 'Avatar', group: 'Components' },
   { path: '/components/chip', label: 'Chip', group: 'Components' },
