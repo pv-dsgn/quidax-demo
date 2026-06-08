@@ -1,0 +1,39 @@
+---
+description: Quidax Claude-design MCP and design token conventions
+alwaysApply: true
+---
+
+# Quidax design system (Claude Design)
+
+Read **CLAUDE.md** in the repo root for full Claude-design MCP workflow and project layout.
+
+## Critical rules
+
+- Brand purple is **#6100A5** → `var(--color-brand)` in `src/styles/tokens.css`. Never hardcode hex in components.
+- Text: `var(--foreground)` (#201749), muted: `var(--foreground-contrast)` (#4C4A55).
+- Surfaces: `#F7F7F7`, `#F2F2EC`, borders `#DEDEDE` / `#E3E2E2` — use token names in tokens.css.
+- Typeface: **Uncut Sans Variable** (`src/styles/fonts.css`, `var(--font-family-sans)`). Font file is `public/fonts/Uncut Sans Variable.ttf` (TTF/variable). Use semantic type tokens (`var(--text-body-sm-size)`, `var(--text-caption-size)`, etc.) — no ad-hoc rem/px font sizes.
+- Spacing: 4px base scale (`--space-*`, `--gap-*`). Section padding: `--section-padding-y`. Use `gap` with `--gap-md` default.
+- Figma flow: `get_design_context` → `get_screenshot` → implement with CSS Modules + tokens (not raw Tailwind from MCP).
+- UI primitives go in `src/components/ui/`. Use MCP asset URLs directly; do not add icon libraries for Figma-provided assets.
+
+## Existing components (`src/components/ui/`)
+
+| Component | File | Notes |
+|-----------|------|-------|
+| Alert | `Alert/Alert.tsx` | info / success / warning / error variants |
+| Avatar | `Avatar/Avatar.tsx` | initials fallback |
+| Chip | `Chip/Chip.tsx` | label chip / tag |
+| CoinRow | `CoinRow/CoinRow.tsx` | crypto asset list row |
+| Divider | `Divider/Divider.tsx` | horizontal rule |
+| NavBar | `NavBar/NavBar.tsx` | top navigation bar |
+| StatCard | `StatCard/StatCard.tsx` | metric / stat display card |
+| Tab / TabBar | `Tab/Tab.tsx`, `Tab/TabBar.tsx` | tab + tab bar container |
+| Toggle | `Toggle/Toggle.tsx` | boolean toggle switch |
+| TransactionRow | `TransactionRow/TransactionRow.tsx` | transaction list row |
+
+All exported from `src/components/ui/index.ts`. Check here before creating new primitives.
+
+## Known token violations to fix
+
+- All component CSS files use hardcoded `rem` values for `font-size` instead of semantic tokens (e.g. `0.875rem` → `var(--text-body-sm-size)`). When editing or adding to a component, migrate its font sizes to token references.

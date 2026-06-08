@@ -1,0 +1,209 @@
+.root {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.navWrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--background);
+  box-shadow: 0 1px 0 var(--color-border);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  align-items: start;
+  min-height: calc(100vh - 4rem);
+}
+
+/* ── Sidebar ─────────────────────────────────────────── */
+
+.sidebar {
+  position: sticky;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--background);
+  border-right: 1.5px solid var(--color-neutral-150);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neutral-250) transparent;
+}
+
+.sidebarInner {
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+/* Search */
+.searchLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-3);
+  width: 14px;
+  height: 14px;
+  color: var(--foreground-contrast);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--space-2) var(--space-3) var(--space-2) calc(var(--space-3) + 14px + 6px);
+  background: var(--color-neutral-100);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--foreground);
+  font-size: var(--text-body-sm-size);
+  font-family: var(--font-family-sans);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.searchInput::placeholder {
+  color: var(--foreground-contrast);
+}
+
+.searchInput:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(97 0 165 / 0.08);
+}
+
+.searchInput::-webkit-search-cancel-button {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+/* Nav */
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.navGroupLabel {
+  display: block;
+  font-size: var(--text-label-size);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--text-label-tracking);
+  text-transform: uppercase;
+  color: var(--foreground-contrast);
+  padding: var(--space-3) var(--space-3) var(--space-1);
+  font-family: var(--font-family-sans);
+  opacity: 0.6;
+}
+
+.navItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-body-sm-size);
+  font-family: var(--font-family-sans);
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.12s, background 0.12s;
+  cursor: pointer;
+  line-height: 1.5;
+  background: none;
+  border: none;
+}
+
+.navItem:hover {
+  color: var(--color-brand);
+  background: var(--color-neutral-100);
+  text-decoration: none;
+}
+
+.navItemActive {
+  color: white !important;
+  background: var(--color-brand) !important;
+  font-weight: var(--font-weight-medium);
+}
+
+.navItemActive:hover {
+  color: white !important;
+  background: var(--color-brand) !important;
+}
+
+.noResults {
+  font-size: var(--text-body-sm-size);
+  color: var(--foreground-contrast);
+  padding: var(--space-3);
+  font-family: var(--font-family-sans);
+  font-style: italic;
+}
+
+/* ── Main outlet ─────────────────────────────────────── */
+
+.main {
+  padding: var(--space-12) var(--space-12) var(--space-24);
+  min-width: 0;
+  max-width: 860px;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .main {
+    padding: var(--space-8) var(--space-8) var(--space-16);
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--color-neutral-150);
+  }
+
+  .sidebarInner {
+    padding: var(--space-4);
+    gap: var(--gap-sm);
+  }
+
+  .sidebarInner > nav {
+    display: flex;
+    gap: var(--space-1);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    scrollbar-width: none;
+  }
+
+  .sidebarInner > nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navGroup {
+    flex-direction: row;
+    flex-shrink: 0;
+  }
+
+  .navGroupLabel {
+    display: none;
+  }
+
+  .navItem {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .main {
+    padding: var(--space-6) var(--space-4) var(--space-12);
+  }
+}
