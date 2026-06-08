@@ -9,6 +9,8 @@ import ColorsPage from './pages/ColorsPage'
 import TypographyPage from './pages/TypographyPage'
 import SpacingPage from './pages/SpacingPage'
 
+import ButtonPage from './pages/ButtonPage'
+import InputPage from './pages/InputPage'
 import AlertPage from './pages/AlertPage'
 import AvatarPage from './pages/AvatarPage'
 import ChipPage from './pages/ChipPage'
@@ -32,6 +34,8 @@ export default function App() {
         <Route path="foundations/colors" element={<ColorsPage />} />
         <Route path="foundations/typography" element={<TypographyPage />} />
         <Route path="foundations/spacing" element={<SpacingPage />} />
+        <Route path="components/button" element={<ButtonPage />} />
+        <Route path="components/input" element={<InputPage />} />
         <Route path="components/alert" element={<AlertPage />} />
         <Route path="components/avatar" element={<AvatarPage />} />
         <Route path="components/chip" element={<ChipPage />} />
