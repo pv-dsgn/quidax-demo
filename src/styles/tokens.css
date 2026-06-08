@@ -18,17 +18,20 @@
   /* Semantic (from site CSS variables) */
   --foreground: #201749;
   --foreground-contrast: #4c4a55;
+  --muted-foreground: #4c4a55;
   --background: #ffffff;
+  --card: #ffffff;
   --app-icon-color: #ec5da0;
 
   /* Aliases for implementation */
+  --border: var(--color-neutral-200);
+  --color-border: var(--color-neutral-200);
+  --color-border-subtle: var(--color-neutral-250);
   --color-text-primary: var(--foreground);
   --color-text-secondary: var(--foreground-contrast);
   --color-surface: var(--background);
   --color-surface-muted: var(--color-neutral-100);
   --color-surface-warm: var(--color-neutral-150);
-  --color-border: var(--color-neutral-200);
-  --color-border-subtle: var(--color-neutral-250);
   --color-accent-pink: var(--app-icon-color);
 
   /* ── Typography: Uncut Sans Variable ───────────────────────────── */
@@ -103,8 +106,8 @@
   --color-negative: #dc2626;
   --color-info-fg: #3b82f6;
   --color-info-bg: #eff6ff;
-  --color-success-fg: #16a34a;
-  --color-success-bg: #f0fdf4;
+  --color-success-fg: #065f46;
+  --color-success-bg: #d1fae5;
   --color-warning-fg: #d97706;
   --color-warning-bg: #fffbeb;
   --color-error-fg: #dc2626;

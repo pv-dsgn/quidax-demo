@@ -50,18 +50,20 @@ const COLOR_PRIMITIVES = [
 const COLOR_SEMANTIC = [
   { token: '--foreground',          hex: '#201749', name: 'Foreground',         usage: 'Primary text' },
   { token: '--foreground-contrast', hex: '#4C4A55', name: 'Foreground Contrast', usage: 'Secondary / muted text' },
+  { token: '--muted-foreground',    hex: '#4C4A55', name: 'Muted Foreground',   usage: 'Placeholder text, de-emphasised labels' },
   { token: '--background',          hex: '#FFFFFF', name: 'Background',          usage: 'Page and card backgrounds' },
+  { token: '--card',                hex: '#FFFFFF', name: 'Card',                usage: 'Card surface fill' },
+  { token: '--border',              hex: '#DEDEDE', name: 'Border',              usage: 'Stroke / divider colour' },
   { token: '--color-black',         hex: '#000000', name: 'Black',               usage: 'High-contrast icons, emphasis' },
   { token: '--color-neutral-100',   hex: '#F7F7F7', name: 'Neutral 100',         usage: 'Subtle backgrounds, demo canvases' },
   { token: '--color-neutral-150',   hex: '#F2F2EC', name: 'Neutral 150',         usage: 'Warm-tinted section fills' },
-  { token: '--color-neutral-200',   hex: '#DEDEDE', name: 'Neutral 200 / Border', usage: 'Borders, dividers' },
+  { token: '--color-neutral-200',   hex: '#DEDEDE', name: 'Neutral 200',         usage: 'Borders, dividers' },
   { token: '--color-neutral-250',   hex: '#E3E2E2', name: 'Neutral 250',         usage: 'Subtle borders, disabled UI' },
-  { token: '--color-positive',      hex: '#16A34A', name: 'Positive',            usage: 'Price up, success states' },
-  { token: '--color-success-bg',    hex: '#F0FDF4', name: 'Success BG',          usage: 'Alert/success background fill' },
+  { token: '--color-success-fg',    hex: '#065F46', name: 'Success FG',          usage: 'Success text and icon' },
+  { token: '--color-success-bg',    hex: '#D1FAE5', name: 'Success BG',          usage: 'Success alert background' },
   { token: '--color-negative',      hex: '#DC2626', name: 'Negative',            usage: 'Price down, error states' },
   { token: '--color-info-fg',       hex: '#3B82F6', name: 'Info',                usage: 'Informational messages' },
   { token: '--color-warning-fg',    hex: '#D97706', name: 'Warning',             usage: 'Caution, pending states' },
-  { token: '--color-card',          hex: '#FFFFFF', name: 'Card',                usage: 'Card surface alias of background' },
 ]
 
 const GOVERNANCE_RULES = [
