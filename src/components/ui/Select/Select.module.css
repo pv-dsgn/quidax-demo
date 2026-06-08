@@ -1,0 +1,104 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.rootDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Label ─────────────────────────────────────────────────────────── */
+
+.label {
+  font-family: var(--font-family-sans);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-body-sm-line);
+  color: var(--foreground);
+}
+
+.required {
+  color: var(--color-negative);
+}
+
+/* ── Select wrapper ────────────────────────────────────────────────── */
+
+.selectWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.selectWrap:focus-within {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(var(--color-brand-rgb), 0.12);
+}
+
+.selectWrapError {
+  border-color: var(--color-negative);
+}
+
+.selectWrapError:focus-within {
+  border-color: var(--color-negative);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+/* ── Native select ─────────────────────────────────────────────────── */
+
+.select {
+  flex: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: var(--input-padding-y) var(--space-8) var(--input-padding-y) var(--input-padding-x);
+  font-family: var(--font-family-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--foreground);
+  cursor: pointer;
+  width: 100%;
+}
+
+.select:disabled {
+  cursor: not-allowed;
+}
+
+/* Placeholder option style */
+.select option[value=""] {
+  color: var(--foreground-contrast);
+}
+
+/* ── Chevron icon ──────────────────────────────────────────────────── */
+
+.chevron {
+  position: absolute;
+  right: var(--input-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  color: var(--foreground-contrast);
+  pointer-events: none;
+}
+
+/* ── Helper / Error text ───────────────────────────────────────────── */
+
+.helper {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-line);
+  color: var(--foreground-contrast);
+}
+
+.helperError {
+  color: var(--color-negative);
+}
