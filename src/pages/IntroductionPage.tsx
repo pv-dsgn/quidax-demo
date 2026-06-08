@@ -75,7 +75,7 @@ export default function IntroductionPage() {
         {/* Stats */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginTop: 'var(--space-2)' }}>
           {[
-            { n: '14', label: 'Color tokens' },
+            { n: '19', label: 'Color tokens' },
             { n: '11', label: 'Type styles' },
             { n: '10', label: 'Components' },
             { n: '1', label: 'Typeface' },

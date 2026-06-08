@@ -12,7 +12,7 @@ const STATS = [
   { n: '15', label: 'Elements' },
   { n: '11', label: 'Components' },
   { n: '2', label: 'Compositions' },
-  { n: '16', label: 'Color Tokens' },
+  { n: '19', label: 'Color Tokens' },
 ]
 
 const TYPE_SCALE = [
@@ -59,11 +59,12 @@ const COLOR_SEMANTIC = [
   { token: '--color-neutral-150',   hex: '#F2F2EC', name: 'Neutral 150',         usage: 'Warm-tinted section fills' },
   { token: '--color-neutral-200',   hex: '#DEDEDE', name: 'Neutral 200',         usage: 'Borders, dividers' },
   { token: '--color-neutral-250',   hex: '#E3E2E2', name: 'Neutral 250',         usage: 'Subtle borders, disabled UI' },
-  { token: '--color-success-fg',    hex: '#065F46', name: 'Success FG',          usage: 'Success text and icon' },
-  { token: '--color-success-bg',    hex: '#D1FAE5', name: 'Success BG',          usage: 'Success alert background' },
-  { token: '--color-negative',      hex: '#DC2626', name: 'Negative',            usage: 'Price down, error states' },
-  { token: '--color-info-fg',       hex: '#3B82F6', name: 'Info',                usage: 'Informational messages' },
-  { token: '--color-warning-fg',    hex: '#D97706', name: 'Warning',             usage: 'Caution, pending states' },
+  { token: '--color-success-fg',  hex: '#065F46', name: 'Success FG',  usage: 'Success text and icon' },
+  { token: '--color-success-bg',  hex: '#D1FAE5', name: 'Success BG',  usage: 'Success alert background' },
+  { token: '--color-positive',    hex: '#16A34A', name: 'Positive',    usage: 'Price up, market data indicators' },
+  { token: '--color-negative',    hex: '#DC2626', name: 'Negative',    usage: 'Price down, error states' },
+  { token: '--color-info-fg',     hex: '#3B82F6', name: 'Info',        usage: 'Informational messages' },
+  { token: '--color-warning-fg',  hex: '#D97706', name: 'Warning',     usage: 'Caution, pending states' },
 ]
 
 const GOVERNANCE_RULES = [
