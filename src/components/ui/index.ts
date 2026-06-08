@@ -1,3 +1,5 @@
+export { Select } from './Select'
+export type { SelectOption, SelectGroup } from './Select'
 export { Avatar } from './Avatar'
 export { Toggle } from './Toggle'
 export { Chip } from './Chip'
