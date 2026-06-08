@@ -28,6 +28,135 @@ const TAG_CONFIG: Record<ChangeType, { label: string; color: string; bg: string 
 
 const CHANGELOG: ChangelogEntry[] = [
   {
+    id: 'color-token-alignment',
+    date: '2026-06-08',
+    sha: 'd13b2c2',
+    title: 'Color token alignment — ColorsPage & DesignPage',
+    description: 'ColorsPage and DesignPage updated to fully reflect all design tokens, including the three newly added semantic tokens and the corrected success colour values.',
+    changes: [
+      {
+        type: 'changed',
+        items: [
+          'ColorsPage Semantic group: adds --muted-foreground, --card, --border swatches; description updated to mention borders',
+          'ColorsPage Status group: adds --color-success-fg (#065F46) and --color-success-bg (#D1FAE5) with corrected design values at the top of the group',
+          'ColorsPage usage snippet now demonstrates --muted-foreground, --card, --border, and the success pair',
+          'ColorsPage page lead updated to "16 CSS custom properties"; semantic aliases callout updated to reference new token names',
+          'DesignPage semantic swatch grid: adds --color-positive (#16A34A) for market data indicators',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'missing-tokens-sync',
+    date: '2026-06-08',
+    sha: '7d1885b',
+    title: 'Add 2 missing design tokens & sync success colours',
+    description: 'Closes the gap between the design file\'s 16 colour tokens and the codebase. Two tokens were absent from tokens.css; success colour values also differed from the Pencil variables.',
+    changes: [
+      {
+        type: 'added',
+        items: [
+          '--muted-foreground: #4C4A55 — used by design components for placeholder and de-emphasised text',
+          '--card: #FFFFFF — card surface fill token, distinct from --background',
+          '--border: var(--color-neutral-200) — direct alias matching the design\'s variable name ($--border)',
+        ],
+      },
+      {
+        type: 'fixed',
+        items: [
+          '--color-success-fg corrected: #16A34A → #065F46 (darker forest green, matching Pencil variable)',
+          '--color-success-bg corrected: #F0FDF4 → #D1FAE5 (medium green tint, matching Pencil variable)',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'design-canvas-section',
+    date: '2026-06-08',
+    sha: 'dcfb01f',
+    title: 'Design page: canvas frame previews',
+    description: 'Exports all three top-level .pen frames as WebP images via the Pencil MCP and embeds them on the Design page as a single scrollable canvas strip.',
+    changes: [
+      {
+        type: 'added',
+        items: [
+          'Canvas section in DesignPage — three WebP exports of Documentation, Elements, and Components frames from dsm-design.lib.pen',
+          'Frame images stored at public/assets/design-canvas/; each links to full-size image on click',
+        ],
+      },
+      {
+        type: 'changed',
+        items: [
+          'Canvas layout revised from three separate labelled sections to a single horizontally-scrollable strip, matching how the frames appear side-by-side on the Pencil canvas',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'gitignore-cleanup',
+    date: '2026-06-08',
+    sha: 'cefca4f',
+    title: 'Repository cleanup — .gitignore',
+    description: 'node_modules, the .claude config directory, and the licensed font TTF were accidentally committed with the Design page. This commit removes them and adds a .gitignore to prevent recurrence.',
+    changes: [
+      {
+        type: 'fixed',
+        items: [
+          '.gitignore added: excludes node_modules/, dist/, .claude/, *.ttf/otf/woff/woff2, and Vite cache',
+        ],
+      },
+      {
+        type: 'removed',
+        items: [
+          'node_modules/ (3 400+ files) untracked from git index',
+          '.claude/ settings and skills untracked',
+          '"Uncut Sans Variable.ttf" licensed font file untracked',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'design-page',
+    date: '2026-06-08',
+    sha: '7ae46da',
+    title: 'Design page & docs layout improvements',
+    description: 'Adds a comprehensive Design page sourced directly from dsm-design.lib.pen via the Pencil MCP, and improves the docs layout centering and width.',
+    changes: [
+      {
+        type: 'added',
+        items: [
+          'DesignPage (/design) — 7-section reference: Overview (stats), Elements (15 atoms with live previews), Components (11 composed patterns), Color Tokens (swatch grid with click-to-copy), Typography (11-step live scale), Spacing (visual 4px-grid bars), Governance (4 rule cards, critical rules, maintenance table)',
+          'DocsLayout nav: "Design" entry added to sidebar and mobile dropdown',
+        ],
+      },
+      {
+        type: 'changed',
+        items: [
+          'DocsLayout main content area centered with margin-inline: auto within its grid column',
+          'Main content max-width increased from 860px to 920px',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'pendinglog-page',
+    date: '2026-06-08',
+    sha: 'd9c2e92',
+    title: 'PendingLog page — live PRs & planned work',
+    description: 'Adds the PendingLog page (/pendinglog) which fetches open pull requests live from the GitHub API on each page load and pairs them with a static planned-work grid.',
+    changes: [
+      {
+        type: 'added',
+        items: [
+          'PendingLogPage (/Pendinglog) — live open PR feed from pv-dsgn/quidax-demo via GitHub API; includes loading skeleton, empty state ("all clear"), and error fallback',
+          'PR cards: number badge, draft/label tags, author avatar + login, "opened X ago / updated X ago" timestamps; click to open PR on GitHub',
+          'Planned items grid: 10 entries across Component, Foundation, Tooling, and Documentation categories with High / Medium / Low priority tags',
+          'Callout explaining where to add new planned items and when to move them to the Changelog',
+        ],
+      },
+    ],
+  },
+  {
     id: 'prev-next-nav',
     date: '2026-06-08',
     sha: '93e2706',
