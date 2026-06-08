@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import DocsLayout from './components/docs/DocsLayout'
 
 import IntroductionPage from './pages/IntroductionPage'
+import ChangelogPage from './pages/ChangelogPage'
 import ColorsPage from './pages/ColorsPage'
 import TypographyPage from './pages/TypographyPage'
 import SpacingPage from './pages/SpacingPage'
@@ -23,6 +24,7 @@ export default function App() {
       <Route path="/" element={<DocsLayout />}>
         <Route index element={<Navigate to="/introduction" replace />} />
         <Route path="introduction" element={<IntroductionPage />} />
+        <Route path="changelog" element={<ChangelogPage />} />
         <Route path="foundations/colors" element={<ColorsPage />} />
         <Route path="foundations/typography" element={<TypographyPage />} />
         <Route path="foundations/spacing" element={<SpacingPage />} />
